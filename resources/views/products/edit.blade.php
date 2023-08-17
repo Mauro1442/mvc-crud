@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-nav-bar></x-nav-bar>
+
 <body>
     <h1>Edit a Product</h1>
     <div>
@@ -19,18 +14,18 @@
     <form method="post" action="{{route('product.update', ['product' => $product])}}">
         @csrf 
         @method('put')
-        <div>
+        <div class="form-group">
             <label>Name</label>
             <input type="text" name="name" placeholder="Name" value="{{$product->name}}"/>
         </div>
-        <div>
+        <div class="form-group">
             <label>Qty</label>
             <input type="text" name="qty" placeholder="Qty" value="{{$product->qty}}"/>
-        <div>
+            <div class="form-group">
             <label>Price</label>
             <input type="text" name="price" placeholder="Price" value="{{$product->price}}"/>
         </div>
-        <div>
+        <div class="form-group">
             <label>Description</label>
             <input type="text" name="description" placeholder="Description" value="{{$product->description}}"/>
         </div>
@@ -38,4 +33,3 @@
 
     </form>
 </body>
-</html>

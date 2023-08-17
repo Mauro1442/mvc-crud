@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-nav-bar></x-nav-bar>
 
 <body>
     <h1>Products</h1>
@@ -14,15 +7,11 @@
         <p>{{session('success')}}</p>
         @endif
     </div>
-    <div>
-        <div>
-            <a href="{{route('product.create')}}">Create a Product</a>
-        </div>
+    <div class="bkg">
         <table>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
-                <th>Qty</th>
+                <th>Quantity</th>
                 <th>Price</th>
                 <th>Description</th>
                 <th>Edit</th>
@@ -30,7 +19,6 @@
             </tr>
             @foreach($products as $product)
             <tr>
-                <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
                 <td>{{$product->qty}}</td>
                 <td>{{$product->price}}</td>
@@ -40,7 +28,7 @@
                     <form action="{{route('product.destroy', ['product' => $product])}}" method="POST">
                         @csrf
                         @method('DELETE')
-                        <button type="submit">Delete</button>
+                        <button class="likeATag" type="submit">Delete</button>
                     </form>
                 </td>
             </tr>
@@ -48,5 +36,3 @@
         </table>
     </div>
 </body>
-
-</html>

@@ -19,18 +19,17 @@ Route::get('/', function () {
     return view('signup');
 });
 
-Route::get('/loginform', function () {
-    return view('loginform');
-});
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
 Route::post('/register', [UserController::class, 'register']);
-Route::post('/login', [UserController::class, 'login']);
+Route::post('/log', [UserController::class, 'log']);
 Route::post('/logout', [UserController::class, 'logout']);
 
-
-Route::get('/product', [ProductController::class, 'index'])->name('product.index');
-Route::get('/product/create', [ProductController::class, 'create'])->name('product.create');
-Route::post('/product', [ProductController::class, 'store'])->name('product.store');
-Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit');
-Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update');
-Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy');
+Route::get('/product', [ProductController::class, 'index'])->name('product.index')->middleware('auth');
+Route::get('/product/create', [ProductController::class, 'create'])->name('product.create')->middleware('auth');
+Route::post('/product', [ProductController::class, 'store'])->name('product.store')->middleware('auth');
+Route::get('/product/{product}/edit', [ProductController::class, 'edit'])->name('product.edit')->middleware('auth');
+Route::put('/product/{product}/update', [ProductController::class, 'update'])->name('product.update')->middleware('auth');
+Route::delete('/product/{product}/destroy', [ProductController::class, 'destroy'])->name('product.destroy')->middleware('auth');

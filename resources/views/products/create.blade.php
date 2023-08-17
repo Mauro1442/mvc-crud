@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+<x-nav-bar></x-nav-bar>
+
 <body>
     <h1>Create a Product</h1>
     <div>
@@ -18,26 +13,18 @@
             </div>
         @endif
     </div>
-    <form method="post" action="{{route('product.store')}}">
+    <form class="bkg-centered" method="post" action="{{route('product.store')}}">
         @csrf
         @method('post')
-        <div>
             <label>Name</label>
             <input type="text" name="name" placeholder="Name"/>
-        </div>
-        <div>
-            <label>Qty</label>
-            <input type="text" name="qty" placeholder="Qty"/>
-        <div>
+            <label>Quantity</label>
+            <input type="text" name="qty" placeholder="Quantity"/>
             <label>Price</label>
             <input type="text" name="price" placeholder="Price"/>
-        </div>
-        <div>
             <label>Description</label>
             <input type="text" name="description" placeholder="Description"/>
-        </div>
-        <input type="submit" value="Save a New Product"/>
-
+        <input type="submit" value="Add"/>
     </form>
 </body>
 </html>

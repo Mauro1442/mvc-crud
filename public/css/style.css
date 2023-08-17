@@ -1,0 +1,223 @@
+form.bkg-centered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+button {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: cadetblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(0, 87, 90);
+    color: #fff;
+}
+
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    padding: 0 20px;
+}
+
+li {
+    margin: 10px 10px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+div.bkg {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+button.likeATag {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+    max-width: fit-content;
+}
+
+button.likeATag:hover {
+    color: rgb(0, 87, 90);
+}
+
+a:hover {
+    color: rgb(0, 87, 90);
+}
+
+input {
+    margin: 10px;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:hover {
+    background-color: #fff;
+}
+
+input[type="submit"] {
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: cadetblue;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: rgb(0, 87, 90);
+    color: #fff;
+}
+
+label {
+    font-weight: bold;
+    color: #fff;
+}
+
+h1 {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    background-color: rgb(0, 87, 90);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+p {
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Reset some default table styles */
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  /* Style the table header */
+  thead {
+    background-color: #848484;
+  }
+  
+  th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  /* Style the table rows */
+  tr:nth-child(even) {
+    background-color: #848484;
+  }
+
+  td {
+    padding: 12px;
+  }
+  
+  /* Add some borders to the table */
+  table, th, td {
+    border: 1px solid #ccc;
+  }
+  
+  /* Optional: Add a bit of spacing between cells */
+  td + td {
+    border-left: 1px solid #ccc;
+  }
+  
+  /* Optional: Center-align the content in cells */
+  td {
+    text-align: center;
+  }
+  
+  /* Optional: Add responsive behavior */
+  @media screen and (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+      display: block;
+    }
+  
+    th {
+      text-align: center;
+      padding: 10px;
+    }
+  
+    td {
+      text-align: center;
+      padding: 10px;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      position: relative;
+    }
+  
+    td:before {
+      content: attr(data-label);
+      position: absolute;
+      left: 0;
+      top: -10px;
+      font-weight: bold;
+    }
+  }
