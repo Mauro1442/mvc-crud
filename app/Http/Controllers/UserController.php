@@ -18,8 +18,8 @@ class UserController extends Controller
     public function log(Request $request)
     {
         $incomingFields = $request->validate([
-            'name' => ['required'],
-            'password' => ['required']
+            'name' => ['required', 'min:3', 'max:20'],
+            'password' => ['required', 'min:5', 'max:20']
         ]);
         if (auth()->attempt(['name' => $incomingFields['name'], 'password' => $incomingFields['password']])) {
             $request->session()->regenerate();

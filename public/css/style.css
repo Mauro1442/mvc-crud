@@ -29,7 +29,7 @@ button:hover {
 
 nav {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     background-color: cadetblue;
     padding: 20px;
@@ -42,7 +42,6 @@ ul {
     justify-content: space-around;
     align-items: center;
     list-style: none;
-    padding: 0 20px;
 }
 
 li {
@@ -73,8 +72,8 @@ button.likeATag {
     font-weight: bold;
     font-size: 16px;
     cursor: pointer;
-    padding: 0;
-    margin: 0;
+    padding: 0px;
+    margin: 0px;
     max-width: fit-content;
 }
 
@@ -129,6 +128,10 @@ h1 {
     color: #fff;
     font-weight: bold;
     text-align: center;
+}
+
+h1.greet {
+  padding: 7px;
 }
 
 body {
@@ -221,3 +224,22 @@ table {
       font-weight: bold;
     }
   }
+/* Reset some default styles to ensure minimalism */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0%;
+}
+
+/* Apply minimal styling to the form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 0px;
+  min-height: 0px;
+  margin: 0px;
+  padding: 0px;
+}

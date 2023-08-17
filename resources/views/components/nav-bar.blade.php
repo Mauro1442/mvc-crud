@@ -13,6 +13,11 @@
     <div id="container">
         <header>
             <nav id="main-menu">
+            @auth    
+            <h1 class="greet">Hello {{auth()->user()->name}}</h1>
+            @else
+            <h1 class="greet">Welcome to the Warehouse</h1>
+            @endauth
                 <ul>
                     @auth
                     <li><a href="/product">Warehouse</a></li>
