@@ -1,6 +1,6 @@
 # Proyecto de Gestión de Productos con Laravel
 
-![Diagrama](images/MVC-Laravel.jpg)
+![Diagrama](resources/images/MVC-Laravel.jpg)
 
 Este proyecto utiliza el framework Laravel para crear una aplicación de gestión de productos. La elección de Laravel se basa en su eficiencia y herramientas.
 
