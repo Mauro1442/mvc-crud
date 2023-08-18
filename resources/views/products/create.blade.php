@@ -1,7 +1,7 @@
 <x-nav-bar></x-nav-bar>
 
 <body>
-    <h1>Create a Product</h1>
+    <h1>Add a Product</h1>
     <div>
         @if($errors->any())
             <div>

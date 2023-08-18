@@ -37,6 +37,6 @@ class UserController extends Controller
             'password' => ['required', 'min:5', 'max:20', 'confirmed']
         ]);
         User::create($incomingFields);
-        return redirect('/loginform');
+        return redirect('/login');
     }
 }
