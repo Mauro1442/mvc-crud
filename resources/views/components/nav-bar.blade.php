@@ -14,7 +14,7 @@
         <header>
             <nav id="main-menu">
             @auth    
-            <h1 class="greet">Hello {{auth()->user()->name}}</h1>
+            <h1 class="greet">Hello {{ucfirst(auth()->user()->name)}}</h1>
             @else
             <h1 class="greet">Welcome to the Warehouse</h1>
             @endauth
