@@ -4,6 +4,10 @@
 
 Este proyecto utiliza el framework Laravel para crear una aplicación de gestión de productos. La elección de Laravel se basa en su eficiencia y herramientas.
 
+## Dump SQL
+
+El archivo di-rosa_mauro.sql se encuentra en la carpeta 'resources' de este repositorio.
+
 ## Características
 
 - Se emplean migraciones de Artisan para crear las tablas de la base de datos.
@@ -22,5 +26,14 @@ Este proyecto utiliza el framework Laravel para crear una aplicación de gestió
 
 1. Configura Laravel en tu entorno.
 2. Clona este repositorio.
-3. Ajusta `.env` con los detalles de tu base de datos.
-4. Ejecuta `php artisan migrate` para crear tablas.
+3. Ajusta `.env` con los detalles de tu base de datos: se debe copiar el archivo del ejemplo .env.example y luego reemplazar los siguientes datos en la seccion mysql: 
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=mvc-crud
+DB_USERNAME=root
+DB_PASSWORD=
+
+4. Crear base de datos mvc-crud con los parametros del punto anterior.
+5. Ejecuta `php artisan migrate` para crear tablas.
