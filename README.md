@@ -1,4 +1,4 @@
-# Proyecto de Gestión de Productos con Laravel
+.env, # Proyecto de Gestión de Productos con Laravel
 
 ![Diagrama](resources/images/MVC-Laravel.jpg)
 
@@ -26,14 +26,16 @@ El archivo di-rosa_mauro.sql se encuentra en la carpeta 'resources' de este repo
 
 1. Configura Laravel en tu entorno.
 2. Clona este repositorio.
-3. Ajusta `.env` con los detalles de tu base de datos: se debe copiar el archivo del ejemplo .env.example y luego reemplazar los siguientes datos en la seccion mysql: 
+3. Ajusta `.env` con los detalles de tu base de datos: se debe copiar el archivo del ejemplo .env.example, renombrarlo como .env y luego reemplazar los siguientes datos de conexion en la seccion mysql: 
 
+```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=mvc-crud
 DB_USERNAME=root
 DB_PASSWORD=
+```
 
-4. Crear base de datos mvc-crud con los parametros del punto anterior.
+4. Crear base de datos llamada mvc-crud y conectar con los parametros del punto anterior (por ejemplo utilizando XAMPP).
 5. Ejecuta `php artisan migrate` para crear tablas.
