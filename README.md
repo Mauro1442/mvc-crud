@@ -1,4 +1,4 @@
-.env, # Proyecto de Gestión de Productos con Laravel
+# Proyecto de Gestión de Productos con Laravel
 
 ![Diagrama](resources/images/MVC-Laravel.jpg)
 
