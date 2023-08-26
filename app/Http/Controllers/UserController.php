@@ -14,6 +14,22 @@ class UserController extends Controller
         return redirect('/');
     }
 
+    public function loginApi(Request $request) {
+        $incomingFields = $request->validate([
+            'name' => 'required',
+            'password' => 'required'
+        ]);
+        if (auth()->attempt($incomingFields)) {
+            $user = User::where('name', $incomingFields['name'])->first();
+            $token = $user->createToken('appToken')->plainTextToken;
+            return $token;
+        } else {
+            return response([
+                'message' => 'Invalid credentials'
+            ], 401);
+        }
+    }
+
 
     public function log(Request $request)
     {

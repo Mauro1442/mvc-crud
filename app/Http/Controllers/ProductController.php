@@ -53,4 +53,22 @@ class ProductController extends Controller
         $product->delete();
         return redirect(route('product.index'))->with('success', 'Product deleted Succesffully');
     }
+
+
+    public function storeProductApi(Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|decimal:0,2',
+            'description' => 'nullable'
+        ]);
+
+        $newProduct = Product::create($data);
+
+        return response([
+            'message' => 'Product id: ' . $newProduct->id . ' created successfully'
+        ], 201);
+
+    }
+
 }
