@@ -30,6 +30,25 @@ class UserController extends Controller
         }
     }
 
+    public function registerApi(Request $request) {
+        $incomingFields = $request->validate([
+            'name' => ['required', 'min:3', 'max:20', Rule::unique('users', 'name')],
+            'email' => 'required', Rule::unique('users', 'email'),
+            'password' => ['required', 'min:5', 'max:20', 'confirmed']
+        ]);
+        $user = User::create($incomingFields);
+        return response([
+            'message' => 'User created successfully',
+            'user' => $user
+        ], 201);
+    }
+
+    public function logoutApi(Request $request) {
+        $request->user()->tokens()->delete();
+        return response([
+            'message' => 'Logged out'
+        ], 200);
+    }
 
     public function log(Request $request)
     {

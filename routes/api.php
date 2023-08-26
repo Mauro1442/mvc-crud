@@ -21,4 +21,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::post('/login', [UserController::class, 'loginApi']);
-Route::post('/product/create', [ProductController::class, 'storeProductApi'])->middleware('auth:sanctum')->middleware('can:visitAdminPages');
+Route::post('/register', [UserController::class, 'registerApi']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth:sanctum');
+
+Route::post('/product/create', [ProductController::class, 'storeProductApi'])->middleware('auth:sanctum');
+Route::get('/product', [ProductController::class, 'indexApi'])->middleware('auth:sanctum');
+Route::get('/product/{product}', [ProductController::class, 'showApi'])->middleware('auth:sanctum');
+Route::put('/product/{product}/update', [ProductController::class, 'updateProductApi'])->middleware('auth:sanctum')->middleware('can:visitAdminPages');
+Route::delete('/product/{product}/destroy', [ProductController::class, 'destroyProductApi'])->middleware('auth:sanctum')->middleware('can:visitAdminPages');

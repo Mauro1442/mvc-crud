@@ -13,6 +13,11 @@ class ProductController extends Controller
         
     }
 
+    public function indexApi(){
+        $products = Product::all();
+        return response($products, 200);
+    }
+
     public function create(){
         return view('products.create');
     }
@@ -35,6 +40,26 @@ class ProductController extends Controller
         return view('products.edit', ['product' => $product]);
     }
 
+    public function showApi(Product $product){
+        return response($product, 200);
+    }
+
+    public function updateProductApi(Product $product, Request $request){
+        $data = $request->validate([
+            'name' => 'required',
+            'qty' => 'required|numeric',
+            'price' => 'required|decimal:0,2',
+            'description' => 'nullable'
+        ]);
+
+        $product->update($data);
+
+        return response([
+            'message' => 'Product id: ' . $product->id . ' updated successfully'
+        ], 200);
+
+    }
+
     public function update(Product $product, Request $request){
         $data = $request->validate([
             'name' => 'required',
@@ -54,6 +79,12 @@ class ProductController extends Controller
         return redirect(route('product.index'))->with('success', 'Product deleted Succesffully');
     }
 
+    public function destroyProductApi(Product $product){
+        $product->delete();
+        return response([
+            'message' => 'Product id: ' . $product->id . ' deleted successfully'
+        ], 200);
+    }
 
     public function storeProductApi(Request $request){
         $data = $request->validate([
